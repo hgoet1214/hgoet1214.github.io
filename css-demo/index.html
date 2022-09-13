@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Demo</title>
+
+    <style>
+        body {
+            background-color: rgb(231, 154, 86);
+        }
+        
+        #red- {
+            color: red;
+        }
+        
+        #blue- {
+            color: blue;
+        }
+        
+        #gre- {
+            color: green;
+            font-size: 24px;
+            text-align: right;
+        }
+        
+        .big {
+            font-size: 50px;
+        }
+        
+        .ques {
+            font-size: 50px;
+            color: purple;
+            text-align: right;
+        }
+        
+        h3,
+        h4 {
+            color: aqua;
+        }
+        
+        #banana {
+            color: rgb(137, 69, 5);
+            font-size: 25px;
+        }
+        
+        #sp1 {
+            background-color: aliceblue;
+        }
+        
+        table,
+        td,
+        th {
+            border-color: black;
+            border-width: 2px;
+        }
+        /* The animation code */
+        
+        @keyframes change {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 300px;
+                top: 150px;
+            }
+            50% {
+                background-color: green;
+                left: 950px;
+                top: 400px;
+            }
+            75% {
+                background-color: blue;
+                left: 450px;
+                top: 375px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        /* The element to apply the animation to */
+        
+        #bonkers {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: red;
+            animation-name: change;
+            animation-duration: 5s;
+            animation-iteration-count: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bonkers"></div>
+
+    <h1>Today we will learn about adding style</h1>
+    <h2>1. This is how we add style with inline CSS</h2>
+    <p>This paragraph has no style</p>
+    <p style="color:seagreen;">This is a seagreen paragraph</p>
+    <p style="color:rgb(235, 11, 223);font-size: 50px;">This is an rgb(235,11,223) with font size 50px paragraph</p>
+    <p style="color:red; font-size:24px; text-align: center; background-color: coral;">This is a red, font size 24px, centered paragraph with coral background</p>
+
+    <h2>This is how we add style with internal CSS and id selectors</h2>
+    <p id="red-">I want this text to be blue</p>
+    <p id="blue-">I want this text to be red</p>
+    <p id="gre-">This text will be orange, 24px, and right aligned</p>
+
+    <h2>This is how we add style with internal CSS and class selectors</h2>
+    <p class="big">I want this text to be really big</p>
+    <p class="ques">What will I look like?</p>
+
+    <h2>This is how we use element tag selectors</h2>
+    <h3>I want this h3 to be aqua</h3>
+    <h4>I want this h4 to be aqua</h4>
+
+    <h2>This is how we use divs and spans</h2>
+
+    <div id="banana">
+        <p>Figure out on your own how to create table borders like this using element selectors</p>
+
+        <table border="1">
+            <tr>
+                <th>Day</th>
+                <th>Food</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>Chicken Fried Rice</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>Spaghetti</td>
+            </tr>
+        </table>
+
+        <p>This paragraph is also part of the div. And <span id="sp1">this is a span inside of the div</span></p>
+        <p>This paragraph is still part of the div</p>
+    </div>
+</body>
+
+</html>
