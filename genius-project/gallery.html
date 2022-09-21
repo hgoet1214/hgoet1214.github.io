@@ -8,6 +8,141 @@
     <title>Gallery</title>
 
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- inline css because the funky gallery stuff only applies to one page and thus this keeps my CSS sheet cleaner/more universal -->
+    <style>
+        /* CSS for image gallery, see source listed at top of HTML but well w3schools */
+        
+        * {
+            /* the * means that this css applies to all elements, gives size of overall box */
+            box-sizing: border-box;
+        }
+        
+        .container {
+            /* this positions the overall image container, which is needed for left/right arrows */
+            position: relative;
+        }
+        
+        .mySlides {
+            /* hides all the big images by default */
+            /* would like to figure out how to have just one show to start later if I have time/willpower */
+            display: none;
+        }
+        
+        .cursor {
+            /* changes the cursor to a pointer when mouse is hovering over an image */
+            cursor: pointer;
+        }
+        
+        .prev,
+        .next {
+            /* does the prev and next buttons */
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            background-color: rgba(139, 56, 0, 0.831);
+        }
+        
+        .next {
+            /* puts the "next button" on the right */
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev:hover,
+        .next:hover {
+            /* when hovering, darken the button */
+            background-color: rgba(77, 25, 8, 0.8);
+        }
+        
+        .numbertext {
+            /* numer text to show progress thru slide (x/5) */
+            color: #f2f2f2;
+            font-size: 30px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        
+        .caption-container {
+            /* container for caption/image text, describes it */
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+        
+        .row:after {
+            /* row is the row of thumbnail images at the bottom */
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .column {
+            /* putting all five columns side by side, even spacing/portion of the width */
+            float: left;
+            width: 20%;
+        }
+        
+        .demo {
+            /* adding transparency effect for thumnbail images */
+            opacity: 0.6;
+        }
+        
+        .active,
+        .demo:hover {
+            /* making full opacity upon thumbnail hover */
+            opacity: 1;
+        }
+    </style>
+
+    <!-- need JS for the functions for changing the pictures of the gallery, again see source at top of gallery section in html -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
 </head>
 
 <body>
@@ -20,9 +155,66 @@
             <li><a href="contact.html">Contact Me</a></li>
         </ul>
 
-        <!-- Sources
-        https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp
-    https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp -->
+        <!-- Source: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+
+        <!-- Overall container for all the images -->
+        <div class="container">
+
+            <!-- These are the large images, has text in corner for x/5 -->
+            <div class="mySlides">
+                <div class="numbertext">1 / 5</div>
+                <img src="images/cat-point.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 5</div>
+                <img src="images/cat-room.webp" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 5</div>
+                <img src="images/cat-fan.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 5</div>
+                <img src="images/cat-ignore.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 5</div>
+                <img src="img_nature_wide.jpg" style="width:100%">
+            </div>
+
+            <!-- Buttons for next and previous, calling on js functions -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Caption for the large image -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <!-- Small thumbnail images that go below main image, lined up -->
+            <div class="row">
+                <div class="column">
+                    <img class="demo cursor" src="images/cat-point.jpg" style="width:100%" onclick="currentSlide(1)" alt="Cat watching pointing human">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="images/cat-room.webp" style="width:100%" onclick="currentSlide(2)" alt="Cat exploring room with human">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="images/cat-fan.jpg" style="width:100%" onclick="currentSlide(3)" alt="Cat with small portable fan">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="images/cat-ignore.jpg" style="width:100%" onclick="currentSlide(4)" alt="Cat ignoring human in background">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                </div>
+            </div>
+        </div>
+
 
     </div>
 </body>
