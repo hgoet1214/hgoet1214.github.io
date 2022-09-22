@@ -21,56 +21,35 @@
         .container {
             /* this positions the overall image container, which is needed for left/right arrows */
             position: relative;
+            /* width: 50%;
+            margin-left: auto; */
+        }
+        /* Three image containers (use 25% for four, and 50% for two, etc) */
+        
+        .colx {
+            float: left;
+            width: 50%;
+            padding-right: 3px;
+        }
+        /* Clear floats after image containers */
+        
+        .rowx::after {
+            content: "";
+            clear: both;
+            display: table;
         }
         
         .mySlides {
             /* hides all the big images by default */
             /* would like to figure out how to have just one show to start later if I have time/willpower */
             display: none;
+            /* width: 50%; */
+            margin-right: auto;
         }
         
         .cursor {
             /* changes the cursor to a pointer when mouse is hovering over an image */
             cursor: pointer;
-        }
-        
-        .prev,
-        .next {
-            /* does the prev and next buttons */
-            cursor: pointer;
-            position: absolute;
-            top: 40%;
-            width: auto;
-            padding: 16px;
-            margin-top: -50px;
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            -webkit-user-select: none;
-            background-color: rgba(139, 56, 0, 0.831);
-        }
-        
-        .next {
-            /* puts the "next button" on the right */
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-        
-        .prev:hover,
-        .next:hover {
-            /* when hovering, darken the button */
-            background-color: rgba(77, 25, 8, 0.8);
-        }
-        
-        .numbertext {
-            /* numer text to show progress thru slide (x/5) */
-            color: #f2f2f2;
-            font-size: 30px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
         }
         
         .caption-container {
@@ -79,6 +58,8 @@
             background-color: #222;
             padding: 2px 16px;
             color: white;
+            width: 50%;
+            margin-left: auto;
         }
         
         .row:after {
@@ -108,36 +89,43 @@
 
     <!-- need JS for the functions for changing the pictures of the gallery, again see source at top of gallery section in html -->
     <script>
+        // starting slide index at first image
         let slideIndex = 1;
         showSlides(slideIndex);
 
-        // Next/previous controls
+        // moves the slide forward/backward based off the next/prev button command
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
 
-        // Thumbnail image controls
+        // changes picture based off if the thumbnail is clicked
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
 
+        // fancy function for showing slides
         function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("demo");
             let captionText = document.getElementById("caption");
+            // if n exceeds the number of slides, then it goes back to image one
             if (n > slides.length) {
                 slideIndex = 1
             }
+            // the opposite; if goes below 1, then sets it to the last image
             if (n < 1) {
                 slideIndex = slides.length
             }
+            // do not show any other slides than the one called upon
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
+            // change other slides out of active status
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
+            // display the proper slide and caption
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
             captionText.innerHTML = dots[slideIndex - 1].alt;
@@ -155,66 +143,67 @@
             <li><a href="contact.html">Contact Me</a></li>
         </ul>
 
+        <h1>Gallery of Experiments</h1>
+
+        <p class="subheader">Click on the different images below to find about the discoveries of different studies on feline intelligence.</p>
+
+
         <!-- Source: https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
 
         <!-- Overall container for all the images -->
         <div class="container">
+            <div class="rowx">
+                <div class="colx">
+                    <!-- These are the large images -->
+                    <div class="mySlides">
+                        <img src="images/cat-point.jpg" style="width:100%">
+                    </div>
 
-            <!-- These are the large images, has text in corner for x/5 -->
-            <div class="mySlides">
-                <div class="numbertext">1 / 5</div>
-                <img src="images/cat-point.jpg" style="width:100%">
-            </div>
+                    <div class="mySlides">
+                        <img src="images/cat-room.webp" style="width:100%">
+                    </div>
 
-            <div class="mySlides">
-                <div class="numbertext">2 / 5</div>
-                <img src="images/cat-room.webp" style="width:100%">
-            </div>
+                    <div class="mySlides">
+                        <img src="images/cat-fan.jpg" style="width:100%">
+                    </div>
 
-            <div class="mySlides">
-                <div class="numbertext">3 / 5</div>
-                <img src="images/cat-fan.jpg" style="width:100%">
-            </div>
+                    <div class="mySlides">
+                        <img src="images/cat-ignore.jpg" style="width:100%">
+                    </div>
 
-            <div class="mySlides">
-                <div class="numbertext">4 / 5</div>
-                <img src="images/cat-ignore.jpg" style="width:100%">
-            </div>
+                    <div class="mySlides">
+                        <img src="images/cat-stare.jpg" style="width:100%">
+                    </div>
 
-            <div class="mySlides">
-                <div class="numbertext">5 / 5</div>
-                <img src="img_nature_wide.jpg" style="width:100%">
-            </div>
-
-            <!-- Buttons for next and previous, calling on js functions -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-            <!-- Caption for the large image -->
-            <div class="caption-container">
-                <p id="caption"></p>
-            </div>
-
-            <!-- Small thumbnail images that go below main image, lined up -->
-            <div class="row">
-                <div class="column">
-                    <img class="demo cursor" src="images/cat-point.jpg" style="width:100%" onclick="currentSlide(1)" alt="Cat watching pointing human">
                 </div>
-                <div class="column">
-                    <img class="demo cursor" src="images/cat-room.webp" style="width:100%" onclick="currentSlide(2)" alt="Cat exploring room with human">
+
+                <!-- Caption for the large image -->
+                <div class="caption-container">
+                    <p id="caption"></p>
                 </div>
-                <div class="column">
-                    <img class="demo cursor" src="images/cat-fan.jpg" style="width:100%" onclick="currentSlide(3)" alt="Cat with small portable fan">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="images/cat-ignore.jpg" style="width:100%" onclick="currentSlide(4)" alt="Cat ignoring human in background">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+
+                <div class="colx">
+                    <!-- Small thumbnail images that go below main image, lined up -->
+                    <div class="row">
+                        <div class="column">
+                            <img class="demo cursor" src="images/cat-point.jpg" style="width:100%" onclick="currentSlide(1)" alt="A common social intelligence test is pointing. Toddlers know pointing means to look at something, but many animals, including chimpanzees, don't. Dogs drew worldwide acclaim when scientists realized that they could recognize the significance, but no one thought to try cats. In a little known 2005 study, cognitive ethologist Ádám Miklósi put cats to the test. He found that they did just as well as dogs-- when they didn't lose interest and walk away. Kristyn Vitale from Oregon State University found similar results many years later, sparking modern scientific interest in feline intelligence.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/cat-room.webp" style="width:100%" onclick="currentSlide(2)" alt="Kristyn Vitale continued her research with other experiments. Human owner Clara brought her cat, Lyla, into an unfamiliar room and stayed with her for two minutes. Clara then left Lyla alone for another two minutes; Lyla became very distressed and cried for her owner. When Clara returned, Lyla then became very friendly and affectionate. After greeting Clara, she began exploring the rest of the room. Traditionally, many people have explained this independence as a disinterest in humans -- but now, Vitale shows that cats show independence like this because the mere presence of their owners gives cats the security to explore an unknown space. They trust us.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/cat-fan.jpg" style="width:100%" onclick="currentSlide(3)" alt="Kristyn Vitale continued to study human-feline relationships, finding that cats pick up on their owner's emotional cues. With the same owner-feline pair of Clara and Lyla, the two entered a room with a fan with streamers attached. When Clara acted scared or concerned, so did Lyla; but when Clara played &ldquo;friends&rdquo; with the fan, addressing it warmly, Lyla&apos;s attitude changed completely. She even lay down beside the previously scary fan -- sharing in Clara&apos;s newfound confidence.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/cat-ignore.jpg" style="width:100%" onclick="currentSlide(4)" alt="In 2017, Kristyn Vitale showed that well-socialized cats genuinely prefer interacting with their owners over food and toys. In 2019, she showed that cats spend more time with humans who pay attention to them. When Moody the cat was presented with a person who played with him, and then a person who ignored him. Moody learned to approach the attentive person only and ignored the latter in turn.">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="images/cat-stare.jpg" style="width:100%" onclick="currentSlide(5)" alt="Overall, cats have more than exceeded society's expectation of them as antisocial descendents of antisocial ancestors. Péter Pongrácz, a colleague of Ádám Miklósi, proved that cats couldn't just follow a pointed finger, but rather a glance -- even if it was just split-second. Cats followed the gaze at the same rate as dogs, a solid 70%. Atsuko Saito showed cats know their own names, even when said by a stranger. Scientists have also found that cats know their owner's voice from a stranger, and even perceive some optical illusions similarly to humans. While cats often find laboratories tobe unfamiliar and stressful environments, and even at home commonly have little interest for our scientific &ldquogames&rdquo;, it is believed that well-socalized and calm cats will perform just as well as dogs in any test of social smarts.">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
 
     </div>
 </body>
