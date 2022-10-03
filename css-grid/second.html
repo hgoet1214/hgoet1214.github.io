@@ -8,16 +8,94 @@
     <title>Second Page</title>
 
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .grid-container {
+            grid-template-columns: 35% auto 25% 25%;
+        }
+        
+        .navmenu {
+            grid-column: 1 / span 4;
+            grid-row: 1;
+        }
+        
+        .main1 {
+            grid-column: 1 / span 1;
+            grid-row: 2;
+        }
+        
+        .main-img {
+            grid-column: 2 / span 3;
+            grid-row: 2;
+        }
+        
+        .sub1-img {
+            grid-column: 1 / span 3;
+            grid-row: 3;
+        }
+        
+        .sub1 {
+            grid-column: 4;
+            grid-row: 3;
+        }
+        
+        .sub2 {
+            grid-column: 1 / span 2;
+            grid-row: 4;
+        }
+        
+        .sub-xtr1 {
+            grid-column: 3;
+            grid-row: 4;
+        }
+        
+        .sub-xtr2 {
+            grid-column: 4;
+            grid-row: 4;
+        }
+    </style>
 </head>
 
 <body>
 
-    <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="second.html">Second Page</a></li>
-        <li><a href="resource.html">Resources</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
-    </ul>
+    <div class="grid-container">
+
+        <div class="grid-item navmenu">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="second.html">Second Page</a></li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+
+        <div class="grid-item main1">
+            <h1>Check our winter collection.</h1>
+            <p>There's nothing we haven't thought of so you can just take care of enjoying your rides.</p>
+        </div>
+        <div class="grid-item main-img">
+            <img src="images/catstretch.jpg" alt="" style="width:100%">
+        </div>
+        <div class="grid-item sub1">
+            <h2>FIND PROTEST SHOP</h2>
+        </div>
+        <div class="grid-item sub1-img">
+            <img src="images/gingerwide2.jpg" alt="" style="width:100%">
+        </div>
+        <div class="grid-item sub2">
+            <h2>MEET THE TEAM</h2>
+            <p>Experts in the fur industry.</p>
+            <p>I have a vball game so here's a quick mockup of the final example structure from the classwork page minus fancy stuff.</p>
+        </div>
+        <div class="grid-item sub2-xtr1">
+            <img src="images/team1.jpg" alt="" style="width:100%">
+            <p>Tabbytha Cream</p>
+        </div>
+        <div class="grid-item sub2-xtr2">
+            <img src="images/team2.jfif" alt="" style="width:100%">
+            <p>Ginger Pawlus, PhD</p>
+        </div>
+    </div>
 
 </body>
 
