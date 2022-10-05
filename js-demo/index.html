@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Let's learn javascript!</h1>
+
+    <h3>How do we do onclick events and alerts on an anchor?</h3>
+
+    <a href="https://www.eastsideprep.org/" target="_blank" onclick="alert('Warning! you are navigating away from my page')">Go to my school's website</a>
+
+    <h3>What's my secret identity?</h3>
+
+    <p id="secret"></p>
+    <button onclick="document.getElementById('secret').innerHTML='Secret stuff'">Reveal me</button>
+    <button onclick="document.getElementById('secret').innerHTML=''">Hide me</button>
+
+    <h3>Two truths and a lie</h3>
+
+    <p>Which one is the lie?</p>
+
+    <ol>
+        <li id="lie">My first pet was a hamster</li>
+        <li>I've played over seven different sports</li>
+        <li>I can handle a lot of wasabi</li>
+    </ol>
+
+    <button onclick="document.getElementById('lie').style.color='red';">Reveal the lie</button>
+    <button onclick="document.getElementById('lie').style.color='black';">Hide</button>
+
+    <h3>How do we change images with javascript?</h3>
+
+    <img id="petimg" src="images/cathead.jfif" alt="">
+
+    <button onclick="document.getElementById('petimg').src='images/cathead.jfif'">Cat</button>
+    <button onclick="document.getElementById('petimg').src='images/doghead.jfif'">Dog</button>
+
+    <h3>how do we cange css styles with a button?</h3>
+    <p id="alice">Hi, I am Alice</p>
+    <button onclick="document.getElementById('alice').style.color='blue'; document.getElementById('alice').style.fontSize='10px'">Cake: eat me</button>
+    <button onclick="document.getElementById('alice').style.color='green'; document.getElementById('alice').style.fontSize='25px'">Potion: drink me</button>
+    <button onclick="document.getElementById('alice').style.color='black'; document.getElementById('alice').style.fontSize='medium'">Normal</button>
+
+    <h3>How do we return user input data?</h3>
+    <button id="name">What's your name?</button>
+    <p>Your name is <span id="outputName">[]</span>!</p>
+
+    <script>
+        document.getElementById("name").onclick = function(){
+            var name = prompt('Enter your name');
+            let output = document.getElementById('outputName');
+            output.innerHTML = name;
+        }
+    </script>
+
+    <h3>End of class demo.</h3>
+
+    <p id="fontfun">Change the font!</p>
+
+    <button onclick="gills();">Gills</button>
+    <button onclick="arial();">Helvetica</button>
+    <button onclick="timesNR();">Times New Roman (back to normal)</button>
+
+    <script>
+        function gills() {
+            document.getElementById('fontfun').style.fontFamily="'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
+        }
+
+        function arial() {
+            document.getElementById('fontfun').style.fontFamily="Arial, Helvetica, sans-serif";
+        }
+
+        function timesNR() {
+            document.getElementById('fontfun').style.fontFamily="'Times New Roman', Times, serif";
+        }
+    </script>
+
+    <p>How are you feeling today?</p>
+
+    <button onclick="document.body.style.backgroundColor='lightblue'">A bit blue</button>
+    <button onclick="document.body.style.backgroundColor='red'">RED</button>
+    <button onclick="document.body.style.backgroundColor='gold'">hAppy yEllow</button>
+    <button onclick="document.body.style.backgroundColor='white'">light mode (ew)</button>
+
+
+
+
+</body>
+</html>
