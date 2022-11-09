@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.C.'s Menu</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/gak8uxb.css">
+
+    <style>
+        .grid-container {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: 32% auto 32%;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 25px;
+        }
+        
+        .grid-item {
+            background-color: #f4e1a1;
+            border-radius: 15px;
+            color: black;
+            font-size: 20px;
+            text-align: left;
+            padding: 30px;
+        }
+        
+        .header1 {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+        }
+        
+        .header2 {
+            grid-column: 1 / span 3;
+            grid-row: 3;
+        }
+        
+        .header3 {
+            grid-column: 1 / span 3;
+            grid-row: 5;
+        }
+        
+        .header4 {
+            grid-column: 1 / span 3;
+            grid-row: 7;
+        }
+        
+        .header5 {
+            grid-column: 1 / span 3;
+            grid-row: 9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="cnavbar">
+        <li style="font-weight:bolder;font-size:larger;"><a href="index.html">C.C. ESPRESSO & ICE CREAMERY</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="bgcontainer">
+
+        <div class="main-img" style="background-image: linear-gradient(rgba(91, 58, 59, 0.15), rgba(91, 58, 59, 0.15)), url(images/menu-header.jpg);">
+            <div class="hero-text">
+                <h1>MENU</h1>
+            </div>
+        </div>
+
+        <div class="grid-container">
+
+            <div class="grid-item header1">
+                <h2>Ice Cream</h2>
+                <p>C.C.'s offers 16 flavors at a time, rotating weekly. Look below for some of our reoccuring flavors.</p>
+            </div>
+            <div class="grid-item 1a">
+                <ul>
+                    <li>Cookie Dough</li>
+                    <li>Cookies & Cream</li>
+                    <li>Peanut Buttle Fudge</li>
+                    <li>Chocolate Mousse</li>
+                    <li>Birthday Cake</li>
+                    <li>Chocolate Chip Cookie Dough</li>
+                </ul>
+            </div>
+            <div class="grid-item 1b">
+                <ul>
+                    <li>Bubblegum</li>
+                    <li>Fruity Poprocks</li>
+                    <li>Espresso Explosion</li>
+                    <li>Cherry</li>
+                    <li>Rocky Road</li>
+                </ul>
+            </div>
+            <div class="grid-item 1c">
+                <ul>
+                    <li>Pineapple Coconut</li>
+                    <li>Black Cherry</li>
+                    <li>Salted Caramel</li>
+                    <li>Strawberry</li>
+                    <li>Kona Coffee</li>
+                </ul>
+            </div>
+
+            <div class="grid-item header2">
+                <h2>Coffee & Drinks</h2>
+            </div>
+            <div class="grid-item 2a">
+                <h3>Coffee</h3>
+                <p>Sizes: 8oz (1 shot), 12oz (1 shot), 16oz (2 shots), 20oz (3 shots), 24oz (4 shots)</p>
+                <ul>
+                    <li>Drip, $1.00 8oz (+$0.25 per upsize)</li>
+                    <li>Americano, $3.00 12oz (+$0.25 per upsize)</li>
+                    <li>Latte, $3.50 8oz (+$0.50 per upsize)</li>
+                    <li>Cappucino, $3.50 8oz (+$0.50 per upsize)</li>
+                    <li>Mocha, $3.75 8oz (+$0.50 per upsize)</li>
+                    <li>Oregon Chai, $3.50 8oz (+$0.25 per upsize)</li>
+                    <li>East India Chai, $3.75 8oz (+$0.25 per upsize)</li>
+                    <ul>
+                        <li>Dirty Chai, +$0.50</li>
+                    </ul>
+                    <li>Cocoa, $2.50 8oz (+$0.25 per upsize)</li>
+                </ul>
+            </div>
+            <div class="grid-item 2b">
+                <p>Add Ons, $0.50</p>
+                <ul>
+                    <li>Breve</li>
+                    <li>Extra Shot</li>
+                    <li>Flavor</li>
+                    <li>Caramel</li>
+                    <li>Soy Milk</li>
+                    <li>Almond Milk</li>
+                    <li>Honey ($0.25)</li>
+                    <li>Hemp Milk ($0.75)</li>
+                </ul>
+                <h3>Iced Drinks</h3>
+                <ul>
+                    <li>Rootbeer Float, $5.00</li>
+                    <li>Italian Soda, $4.50</li>
+                    <li>Redbull Italian Soda, $5.50</li>
+                    <li>Lemonade, $4.00</li>
+                    <li>Strawberry Lemonade, $4.50</li>
+                    <li>Bottled Water, $1.50</li>
+                    <li>Soft Drink, $1.50</li>
+                    <li>Orange Juice, $2.25</li>
+                </ul>
+            </div>
+            <div class="grid-item 2c">
+                <h3>Blended</h3>
+                <ul>
+                    <li>Old-Fashioned Milkshake, $6.00</li>
+                    <li>Espresso/Mocha Milkshake, $6.50</li>
+                    <li>Malted Milkshake, $6.50</li>
+                    <li>Ice Rage (Frappucino), $5.25</li>
+                    <ul>
+                        <li>Standard: Coffee, Mocha, Vanilla, Caramel, Chocolate PB, Heath, White Chocolate</li>
+                        <li>Sugar Free: Vanilla, Mocha</li>
+                        <li>Coffee Free: Vanilla, Cookies & Cream</li>
+                    </ul>
+                    <li>Smoothie, $5.00</li>
+                    <ul>
+                        <li>Strawberry, Raspberry, Banana, Peach, or Mango</li>
+                    </ul>
+                    <li>Matcha Green Tea, $4.75</li>
+                </ul>
+            </div>
+
+
+            <div class="grid-item header3">
+                <h2>Bakery Treats</h2>
+                <p>We offer several freshly baked cookies, bars, and scones in the cafe each day. We also bring in treats from local bakeries -- keep an eye on our Facebook for fresh treats!</p>
+            </div>
+            <div class="grid-item 3a">
+                <ul>
+                    <li>Chocolate Chip Cookie, $2.50</li>
+                    <li>M&M Cookie, $3.00</li>
+                    <li>Peanut Butter Chocolate Chip Cookie, $2.50</li>
+                    <li>Snickerdoodle Cookie, $2.50</li>
+                    <li>Oatmeal Raisin Cookie, $2.50</li>
+                    <li>Molasses Ginger Cookie, $2.50</li>
+                    <li>Pink Cookie, $3.25</li>
+                </ul>
+            </div>
+            <div class="grid-item 3b">
+                <ul>
+                    <li>Pecan Bar, $2.75</li>
+                    <li>Caramel Bar, $2.75</li>
+                    <li>Espresso Bar, $2.75</li>
+                    <li>Glazed Donut, $1.25</li>
+                    <li>Morning Glory Muffin, $2.50</li>
+                    <li>Brownies, $3.00</li>
+                    <li>Oatmeal, $3.75</li>
+                </ul>
+            </div>
+            <div class="grid-item 3c">
+                <ul>
+                    <li>Blueberry Scone, $3.25</li>
+                    <li>Orange Cranberry Scone, $3.25</li>
+                    <li>White Chocolate Raspberry Scone, $3.25</li>
+                    <li>Apricot Walnut Scone, $3.25</li>
+                    <li>Mixed Berry Scone, $3.25</li>
+                </ul>
+            </div>
+
+            <div class="grid-item header4">
+                <h2>Blazing Bagels & Food</h2>
+            </div>
+            <div class="grid-item 4a">
+                <h3>Blazing Bagels</h3>
+                <ul>
+                    <li>Plain</li>
+                    <li>Asiago</li>
+                    <li>Everything</li>
+                    <li>Cinnamon Raisin</li>
+                    <li>Jalapeno Cheddar</li>
+                    <li>Chevy</li>
+                    <li>Bacon</li>
+                    <li>Pretzel</li>
+                    <li>Cheddar Chive</li>
+                    <li>Gluten Free</li>
+                    <li>Sundried Tomato</li>
+                    <li>Poppy Seed</li>
+                    <li>Pizza</li>
+                </ul>
+            </div>
+            <div class="grid-item 4b">
+                <h3>Bagel Sandwiches, $6.25</h3>
+                <ul>
+                    <li>Plain (with ham, egg, and cheddar)</li>
+                    <li>Jalapeno (with egg, pepperjack, and sausage)</li>
+                    <li>Bacon Cheddar Chive (with bacon, egg, and cheddar)</li>
+                </ul>
+                <h3>Cream Cheese</h3>
+                <ul>
+                    <li>Plain</li>
+                    <li>Berry</li>
+                    <li>Jalapeno</li>
+                    <li>Garlic Herb</li>
+                </ul>
+            </div>
+            <div class="grid-item 4c">
+                <h3>Other Foods</h3>
+                <ul>
+                    <li>Jimmy Dean, $3.75</li>
+                    <li>Ham & Cheese Biscuit, $3.75</li>
+                    <li>Sausage Roll, $3.75</li>
+                </ul>
+                <p>(See Facebook for seasonal offerings)</p>
+            </div>
+
+            <div class="grid-item header5">
+                <h2>Candy</h2>
+                <p>C.C.'s also has a back shelf filled with unique candies. This shelf also offers an assortment of Tazo and Stash teas.</p>
+            </div>
+            <div class="grid-item 5a">
+                <ul>
+                    <li>Hi-Chews</li>
+                    <li>Skittles</li>
+                    <li>Pop Rocks</li>
+                    <li>Air Heads</li>
+                    <li>Wonka Nerds Rope</li>
+                </ul>
+            </div>
+            <div class="grid-item 5b">
+                <ul>
+                    <li>Candy Necklace, $0.40</li>
+                    <li>Giant Smarties, $0.40</li>
+                    <li>Hamburger Gummies, $1.00</li>
+                    <li>Mini Burger, $0.25</li>
+                    <li>Sour Flush</li>
+                </ul>
+            </div>
+            <div class="grid-item 5c">
+                <ul>
+                    <li>Icee Squeeze</li>
+                    <li>Wafers</li>
+                    <li>Zees, $1.00</li>
+                    <li>Sour Gecko, $0.89</li>
+                    <li>Ring Pop, $1.00</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">C.C. Espresso & Ice Creamery | 15525 Main St, Duvall, WA 98019 | 425.788.9718</div>
+
+</body>
+
+</html>

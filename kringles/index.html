@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kringles Bakery</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/srs0mpb.css">
+
+    <style>
+        .grid-container {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: auto 8% 49%;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        
+        .grid-item {
+            background-color: #f4e1a1;
+            border-radius: 15px;
+            color: black;
+            font-size: 20px;
+            text-align: left;
+            padding: 30px;
+        }
+        
+        .twoleft {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+        
+        .tworight {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        
+        .navleft {
+            grid-column: 1;
+            grid-row: 2 / span 2;
+        }
+        
+        .galleryscroll {
+            grid-column: 2 / span 2;
+            grid-row: 2;
+        }
+        
+        .blurb {
+            grid-column: 2 / span 2;
+            grid-row: 3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <ul class="navbar">
+        <img src="images/logo2.png" alt="" class="logo">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+            <a class="dropbtn" href="#">Menu</a>
+            <div class="dropdown-content">
+                <a href="#">Favorites</a>
+                <a href="#">Gallery</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="#">Shop</a>
+            <div class="dropdown-content">
+                <a href="#">Pickup</a>
+                <a href="#">Ship</a>
+                <a href="#">Catering</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="#">Rewards</a>
+            <div class="dropdown-content">
+                <a href="#">Gift Cards</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="#">About Us</a>
+            <div class="dropdown-content">
+                <a href="#">Our Story</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </li>
+    </ul>
+
+    <div class="bgcontainer">
+
+        <div class="main-img" style="background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.2)), url(images/index-mainimg.jpg);">
+            <div class="hero-text">
+                <h1>Kringles Bakery</h1>
+            </div>
+        </div>
+
+        <div class="grid-container" style="padding:25px">
+            <div class="grid-item twoleft">
+                <h2>HOURS | NOVEMBER</h2>
+                <table>
+                    <tr>
+                        <td>Mon 6 AM - 1 PM</td>
+                        <td>Tue-Fri 6 AM - 5 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Sat 8 AM - 5 PM</td>
+                        <td>Sun 8 AM - 3 PM</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="grid-item tworight">
+                <h2>BAKERY</h2>
+                <p>16727 Redmond Way, Redmond, WA 98052</p>
+                <p>425.558.3688</p>
+                <p>FOLLOW US <span style="color:red">Insta Yelp Twt TripA</span></p>
+
+            </div>
+            <div class="grid-item navleft">
+                <h2>THANKSGIVING AT KRINGLES</h2>
+                <p>Help support our family bakery — buy gift cards!</p>
+                <p>Check out Kringles Catering!</p>
+                <p>Become a Kringler to get Kringlers' Only specials — sign up today!</p>
+            </div>
+            <div class="grid-item galleryscroll">
+                <h2>SEE WHAT WE'RE UP TO</h2>
+                <p>gallery scroll</p>
+            </div>
+            <div class="grid-item blurb">
+                <h2>WHO ARE WE?</h2>
+                <p>Kringles happy story</p>
+            </div>
+            <div class="grid-item name">XXX</div>
+        </div>
+
+    </div>
+
+    <div class="footer">&copy; 2017 Kringles Bakery | 16727 Redmond Way, Redmond, WA 98052 | 425.558.3688</div>
+
+</body>
+
+</html>
