@@ -91,3 +91,12 @@ h2 {
     padding: 14px 16px;
     font-size: larger;
 }
+
+.newsletter {
+    background-color: #1d305e;
+    color: #f7ebc3;
+}
+
+.newsletter button {
+    color: rgb(180, 31, 39);
+}

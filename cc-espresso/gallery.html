@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="https://use.typekit.net/gak8uxb.css">
 
     <style>
+        /* Source https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp. */
+        
         .row {
             display: flex;
             flex-wrap: wrap;
             padding: 0 4px;
         }
-        /* Create four equal columns that sits next to each other */
         
         .column {
             flex: 33%;
@@ -36,7 +37,6 @@
             padding-left: 15px;
             padding-top: 15px;
         }
-        /* Responsive layout - makes a two column-layout instead of four columns */
         
         @media screen and (max-width: 800px) {
             .column {
@@ -44,7 +44,6 @@
                 max-width: 50%;
             }
         }
-        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
         
         @media screen and (max-width: 600px) {
             .column {
@@ -87,10 +86,11 @@
 
         <div class="main-img" style="background-image: linear-gradient(rgba(91, 58, 59, 0.35), rgba(91, 58, 59, 0.35)), url(images/gall7.jpg);">
             <div class="hero-text">
-                <h1>GALLERY</h1>
+                <h1 style="padding:20px">GALLERY</h1>
             </div>
         </div>
 
+        <!-- Source: https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp. -->
         <div class="row">
             <div class="column">
                 <img class="imgy" src="images/f1.jpg" alt="">
